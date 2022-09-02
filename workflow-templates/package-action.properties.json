@@ -1,0 +1,6 @@
+{
+    "name": "Package Actions and publish to Container registry",
+    "description": "Packages actions and publishes the artifacts to Github container registry",
+    "iconName": "rails",
+    "categories": ["Actions on packages"]
+}
