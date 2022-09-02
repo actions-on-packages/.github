@@ -5,7 +5,9 @@ Get started with the secure way of publishing 🛳️ and consuming in workflows
 ## How to get started with `Actions on packages`
 - Actions on packages requires that you copy `release.yml` workflow from this repository. This workflow is responsible for packaging the action contents  📦 while creating new releases and publish them to a container registry 🛳️.
 
-  - you can further extend the workflow by additionally adding build, minify steps and much more.  
+  - you can further extend the workflow by additionally adding build, minify steps and much more.
+  
+- Make sure the feature `Actions on packages` feature is enabled, to start experiencing the changes.
 
 - Install GH CLI extenstion for new release experience https://github.com/actions-on-packages/gh-action-release. This extension requires few additional metadata while creating new releases, below is the command FYI,
 
