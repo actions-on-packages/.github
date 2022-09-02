@@ -9,7 +9,11 @@ Get started with the secure way of publishing 🛳️ and consuming in workflows
   
 - Make sure the feature `Actions on packages` feature is enabled ✔️, to start experiencing the changes.
 
-- Install GH CLI extenstion for new release experience https://github.com/actions-on-packages/gh-action-release. This extension requires few additional metadata while creating new releases, below is the command FYI,
+- Install GH CLI extenstion for new release experience https://github.com/actions-on-packages/gh-action-release. Installation instructions are available on the cli extension repo.
+
+  - This new release experience enforces the semantic versioning for action releases by auto-generating tag_name based the changetype (valid values are `major/minor/patch`) provided. This enforcement helps in tag immutability and avoids re-tagging of new releases with existing tag_name, and follows the widely popular [Semver](https://semver.org) guidelines :g for genrating release tags.
+
+-   This extension requires few additional metadata while creating new releases, below is the command FYI,
 
 ```
 gh action-release create --help
