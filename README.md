@@ -7,7 +7,7 @@ Get started with the secure way of publishing 🛳️ and consuming in workflows
 
   - you can further extend the workflow by additionally adding build, minify steps and much more.
   
-- Make sure the feature `Actions on packages` feature is enabled, to start experiencing the changes.
+- Make sure the feature `Actions on packages` feature is enabled ✔️, to start experiencing the changes.
 
 - Install GH CLI extenstion for new release experience https://github.com/actions-on-packages/gh-action-release. This extension requires few additional metadata while creating new releases, below is the command FYI,
 
