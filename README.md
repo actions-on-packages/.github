@@ -12,7 +12,8 @@ Get started with the secure way of publishing 🛳️ and consuming in workflows
 - Install GH CLI extenstion for new release experience https://github.com/actions-on-packages/gh-action-release. Installation instructions are available on the cli extension repo.
 
   - This new release experience enforces the semantic versioning for action releases by auto-generating tag_name based the changetype (valid values are `major/minor/patch`) provided. This enforcement helps in tag immutability and avoids re-tagging of new releases with existing tag_name, and follows the widely popular [Semver](https://semver.org) guidelines :g for genrating release tags.
-  - If your previous releases, didnot follow semver compliance for tagging, the next release through this experience parses the latest release tag and generates subsequent semver compliant tag.
+  - If your previous releases, didnot follow semver compliance for tagging, the next release through this experience parses the latest release tag and generates subsequent semver compliant tag, which means, if the latest release tag is v2, the next major release would be tagged as `3.0.0`, and if the release tag only contains chars like `release` the next major release would reset to `1.0.0`. 
+  - After every successful release through this new experience, the latest release tag will be maintained (despite the latest release being deleted) and for subsequent releases, the next will be calculated on top of it.
 
 -   This extension requires few additional metadata while creating new releases, below is the command FYI,
 
