@@ -26,9 +26,7 @@ jobs:
 #           output: 'minify/src/' # (OPTIONAL)
         
       - name: Publish action 
-        uses: ruchika-jain/package-action@2.0.0
-        id: publish-action
-        with: 
-           semver: ${{ github.event.release.tag_name }}
-#            workdir: 'minify/src/'
+        uses: actions-on-packages/package-action@0.1.0
+#        with: 
+#            path: 'dist/'
         
