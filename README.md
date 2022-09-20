@@ -15,7 +15,7 @@ With Actions Packages, you can reference actions by their version and feel confi
   - (Optional) You can also input the `path` of the action contents that needs to published for the `package-action` action within the workflow, as below 
  
  ```
-    uses: actions-on-packages/package-action@0.1.0
+    uses: actions-on-packages/package-action@0.3.0
     with:
       path: <path of action contents>  // (optional)
   ```
