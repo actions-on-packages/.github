@@ -8,7 +8,7 @@ At the moment Github Actions are hosted on git(hub) repositories, which due to t
 With Actions Packages, you can reference actions by their version and feel confident that you are using the exact version as specified when your workflow runs.
 
 ## How to get started with `Actions on packages`
-- The feature flag `actions_on_packages` should be enabled for the action repo to start experiencing `Actions on packages` feature. Please leave a message in `#actions-on-packages` channel if you would like to experiment with `Actions on packages`, and we will enable the feature flag on your  repository.
+- The feature flag `actions_on_packages` should be enabled for the action repo to start experiencing `Actions on packages` feature. Please leave a comment in the [discussion here](https://github.com/github/c2c-actions-nirvana/discussions/267) if you would like to try out Actions on packages or if you have any suggestions/feedback.
 - Actions on packages requires that you copy [release.yml](https://github.com/actions-on-packages/.github/blob/main/workflow-templates/release.yml) workflow from this repository. This workflow is responsible for packaging the action contents  📦 while creating new releases and publish them to a container registry 🛳️.
 
   - (Optional) you can further extend the workflow by additionally adding build, minify steps and much more.
