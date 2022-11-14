@@ -20,41 +20,16 @@ With Actions Packages, you can reference actions by their version and feel confi
       path: <path of action contents>  // (optional)
   ```
 
-- Install GH CLI extenstion for new release experience https://github.com/actions-on-packages/gh-action-release. Installation instructions are available on the cli extension repo.
+- After adding of release.yml file into, a user can create packages for their action repo and publish them to GHCR by creating releases with some conditions on the `gitTag` used.
+- The `gitTag` used for release creation should follow the guidlines of being semver compliant as mentioned in the release creation page. User should follow these guidlines :
 
-  - This new release experience enforces the semantic versioning for action releases by auto-generating tag_name based the changetype (valid values are `major/minor/patch`) provided. This enforcement helps in tag immutability and avoids re-tagging of new releases with existing tag_name, and follows the widely popular [Semver](https://semver.org) guidelines for genrating release tags.
-  
-**Note:** If your previous releases, did not follow semver compliance for tagging, the next release through this experience parses the latest release tag and generates subsequent semver compliant tag, which means, if the latest release tag is v2, the next major release would be tagged as `3.0.0`, and if the release tag only contains chars like `release` the next major release would reset to `1.0.0`. 
-  
--   This extension requires few additional metadata while creating new releases, below is the command FYI,
+<img width="326" alt="Screenshot 2022-11-14 at 5 21 00 PM" src="https://user-images.githubusercontent.com/45332271/201653133-cc78d8b3-c2aa-4009-b190-e569d0814b72.png">
 
-``` 
-gh-action-release: Works with GitHub Actions Releases. 
 
-USAGE:
-	gh-action-release <command> [flags]
-	
-CORE COMMANDS:
-	create:		creates action release
 
-FLAGS
-	-c, --changetype            change type of the release. Valid values are: major/minor/patch
-  	-p, --prerelease            is this a pre-release? Valid values are: (y/n or true/false)
-  	-n, --releasenotes          release notes of the release
-  	-r, --repo                  repo to create release for
-  	-t, --title                 title of the release
-	--help                      Show help for create command
-	
-EXAMPLES:
-	$ gh action-release create
-	$ gh action-release create -r github/js-action -c minor -t "release title" -p n
-	$ gh action-release create -r github/js-action -c minor -t "release title" -n "release notes" -p n
-	$ gh action-release create --repo github/js-action --changetype minor --title "release title" --releasenotes "release notes" --prerelease n
-```
+- Tags that strictly follow semantic versioning(`1.0.0` or `2.3.0`) or tags that have a prefix `v` along with semantic versioned tags(`v1.0.0` or `v2.3.0`) are acceptable (packages cannot be re-published with existing package tags again).
 
-- The create release command above returns the link of the release workflow run, visit the link to track progress of package publishing. A package with with repo name and a generated semver compliant tag would be published to GHCR, 
-
-<img width="1400" alt="image" src="https://user-images.githubusercontent.com/13884596/190091843-d739d30e-1406-451a-a00d-98c09a4b74d5.png">
+- This release.yml is executed when a release is created either through GUI or CLI. Then the user has to track progress of package publishing from the workflow run of this release.yml
 
 - That's all that it takes in securing your workflows from malicious commits to actions by bad actors and re-tagging of releases with breaking changes 🎉 🚀 .
 - And the rest, leave it to us on how the action packages are stored and retrieved securely 🥳
