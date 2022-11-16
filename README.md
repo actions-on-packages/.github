@@ -20,14 +20,16 @@ With Actions Packages, you can reference actions by their version and feel confi
       path: <path of action contents>  // (optional)
   ```
 
-- After adding of release.yml file into, a user can create packages for their action repo and publish them to GHCR by creating releases with some conditions on the `gitTag` used.
-- The `gitTag` used for release creation should follow the guidlines of being semver compliant as mentioned in the release creation page. User should follow these guidlines :
+- After adding release.yml, action packages can be created and published to GHCR by following the normal release procedure either using Repo Releases GUI or CLI.
+- The `gitTag` used for release creation should follow the guidlines of being semver compliant as mentioned in the release creation page. Refer below screenshot :
 
 <img width="326" alt="Screenshot 2022-11-14 at 5 21 00 PM" src="https://user-images.githubusercontent.com/45332271/201653133-cc78d8b3-c2aa-4009-b190-e569d0814b72.png">
 
 
 
-- Tags that strictly follow semantic versioning(`1.0.0` or `2.3.0`) or tags that have a prefix `v` along with semantic versioned tags(`v1.0.0` or `v2.3.0`) are acceptable (packages cannot be re-published with existing package tags again).
+- Tags that strictly follow semantic versioning(`1.0.0` or `2.3.0`) or tags that have a prefix `v` along with semantic versioned tags(`v1.0.0` or `v2.3.0`) are acceptable.
+
+- Packages cannot be re-published with existing package tags again.
 
 - This release.yml is executed when a release is created either through GUI or CLI. Then the user has to track progress of package publishing from the workflow run of this release.yml
 
