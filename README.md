@@ -29,9 +29,9 @@ With Actions Packages, you can reference actions by their version and feel confi
 
 - Tags that strictly follow semantic versioning(`1.0.0` or `2.3.0`) or tags that have a prefix `v` along with semantic versioned tags(`v1.0.0` or `v2.3.0`) are acceptable.
 
-- Packages cannot be re-published with existing package tags again.
+- As the actions on packages are immutable, packages with existing semver tag once published, they cannot be republished.
 
-- This release.yml is executed when a release is created either through GUI or CLI. Then the user has to track progress of package publishing from the workflow run of this release.yml
+- Release.yml workflow is triggered when a release is created either through releases GUI or CLI. The progress of package publishing can be tracked from the workflow run of the release.yml
 
 - That's all that it takes in securing your workflows from malicious commits to actions by bad actors and re-tagging of releases with breaking changes 🎉 🚀 .
 - And the rest, leave it to us on how the action packages are stored and retrieved securely 🥳
