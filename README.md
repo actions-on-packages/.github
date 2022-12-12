@@ -64,4 +64,25 @@ To login with a PAT token, Create a PAT token with `write:packages` and `repo` f
 
 <img width="1013" alt="image" src="https://user-images.githubusercontent.com/13884596/207029122-ec685498-c54f-4b99-8126-05cc89ef7a80.png">
 
+## How to use `actions-packages` in workflows
+The publishing workflow requires the actions repository to be added to the FF `actions_on_packages`, which also allows 100% of this action traffic to be routed to the actions-packages.
 
+### Migrated releases
+The migrated releases will continue to use the same referencing semantics, so there is no need to update the existing workflows.
+
+### New releases
+The new release or migrated release generates the `action-package` which can be found under the associated packages on the repository home page. Navigate to the action-package and you will find the usage snippet. See the screenshots below:
+<img width="768" alt="image" src="https://user-images.githubusercontent.com/17195847/207063008-141b9c4d-795b-4a9d-860e-8c0fd76c74c7.png">
+<img width="767" alt="image" src="https://user-images.githubusercontent.com/17195847/207068051-576ade19-78fe-4555-99bd-48215128e765.png">
+
+### Splat versioning
+🚀Good news🚀 Actions-Packages also supports the splat versioning hence the actions can be referenced using the sample semantics without having any additional tag maintained.
+
+Say: The action author of `mycool\myawesome` just released a new version action version `v4.2.2`.
+The splat referencing is shown as below:
+```yml
+- name: myawesome action
+  uses: mycool/myawesome@v4
+
+```
+Now, no matter how many releases are created under the major version 4, `@v4` will always point to the latest released version.
