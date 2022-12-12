@@ -36,3 +36,29 @@ With Actions Packages, you can reference actions by their version and feel confi
 - That's all that it takes in securing your workflows from malicious commits to actions by bad actors and re-tagging of releases with breaking changes 🎉 🚀 .
 - And the rest, leave it to us on how the action packages are stored and retrieved securely 🥳
 - The action package consumption experience in workflows remains the same, as we internally make sure to retrieve the action packages seamlessly. 
+
+## How to migrate existing action releases to `Actions on packages`?
+The new action releases will be automatically published as action packages as stated in the above section, for the existing action releases to be migrated as action packages, follow the steps below,
+
+- The feature flag `actions_on_packages` should be enabled for the action repo to start experiencing `Actions on packages` feature. Please leave a comment in the [discussion here](https://github.com/github/c2c-actions-nirvana/discussions/267) if you would like to try out Actions on packages or if you have any suggestions/feedback.
+
+- Install GitHub CLI extension for action releases migration, by running below command
+
+    `gh extension install actions-on-packages/gh-action-release`
+
+- For migrating a release of an existing action, run the below command
+
+    `gh action-release migrate --repo <repo-name-with-owner>`
+
+  and choose a release from the list of releases.
+  
+- The CLI extension will start migrating action release and ackowledges with resulting action package URL
+
+For example, check out the below sample run 
+![image](https://user-images.githubusercontent.com/13884596/207018328-6801c59e-a562-4216-a318-94e43370c4ba.png)
+<img width="1225" alt="image" src="https://user-images.githubusercontent.com/13884596/207019455-43b2f166-21b8-41ca-8ebf-f4d64546e668.png">
+
+Note: If the Oauth token, fails to upload the action package, please try a PAT token with `write:packages` permission, as with the OAuth token, we are facing some issues. We are working to fix the issue soon and update back here. 
+
+
+
