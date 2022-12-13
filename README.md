@@ -58,7 +58,7 @@ For example, check out the below sample run
 ![image](https://user-images.githubusercontent.com/13884596/207018328-6801c59e-a562-4216-a318-94e43370c4ba.png)
 <img width="1225" alt="image" src="https://user-images.githubusercontent.com/13884596/207019455-43b2f166-21b8-41ca-8ebf-f4d64546e668.png">
 
-Note: If the Oauth token, fails to upload the action package, please try a PAT token with `write:packages` permission, as with the OAuth token, we are facing some issues. We are working to fix the issue soon and update back here. 
+Note: If the Oauth token, fails to upload the action package with a `403 - forbidden` error, try adding `write:packages` permission to the OAuth token by running `gh auth refresh --scopes write:packages`.
 
 To login with a PAT token, Create a PAT token with `write:packages` and `repo` full permissions and follow the screenshot below 
 
