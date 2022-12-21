@@ -28,6 +28,6 @@ jobs:
         
       - name: Publish action 
         uses: actions-on-packages/package-action@0.4.2
-#        with: 
-#            path: 'dist/'
+        with:
+          path: 'dist/'
         
